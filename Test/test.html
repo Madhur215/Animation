@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+       <title>Letters</title>
+       <style>
+           body{
+            background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
+           }
+       </style>
+    </head>
+    <body>
+        <script>
+
+        document.onkeydown  = animateKeys;
+        function animateKeys(event){
+            var keyCode = event.keyCode;
+            var c = String.fromCharCode(keyCode);
+            
+            var key = document.createElement("div");
+            document.body.appendChild(key);
+
+            key.style.position = "absolute" ;
+             
+            var randomX = Math.round(Math.random() * window.innerWidth);
+            var randomY = Math.round(Math.random() * window.innerHeight);
+             
+            key.style.left = randomX + 'px';
+            key.style.top = randomY + 'px';
+            key.innerText = c;
+             
+            key.style.transition = "all 0.5s linear";
+            key.style.left = key.offsetLeft  + 'px';
+            key.style.top = key.offsetTop  + 'px';
+
+            key.style.fontSize = "120px"
+            key.style.opacity = 0; 
+            key.style.color = "#3366ff";           
+        
+         } 
+        </script>
+    </body>
+</html>
